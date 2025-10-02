@@ -1,0 +1,89 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
+      background-size: 600% 600%;
+      animation: bgAnim 12s ease infinite;
+      transition: background 0.5s, color 0.5s;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Background animado */
+    @keyframes bgAnim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 40px;
+    }
+
+    /* Texto com efeito de digitação */
+    .typing {
+      font-size: 2em;
+      border-right: 3px solid white;
+      width: 20ch;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(20), blink .7s step-end infinite alternate;
+      margin: auto;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    /* Botão mágico */
+    .magic-btn {
+      background: #ff6ec4;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .magic-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ff6ec4, 0 0 40px #7873f5;
+    }
+
+    /* Animação ao aparecer no scroll */
+    .hidden {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Cursor customizado */
+    .cursor {
+      width: 20px;
+      height: 20px;
+      border: 2px solid white;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+      transition: transform 0.15s ease;
+      z-index: 9999;
+    }
+
+    /* Dark mode */
+    .dark {
+      background: #111 !important;
+      color: #eee !important;
+    }
